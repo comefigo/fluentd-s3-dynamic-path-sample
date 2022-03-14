@@ -1,0 +1,10 @@
+version: '3.7'
+services:
+  td-agent:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    image: my-fluentd:v1.13.3-1.1
+    volumes:
+      - ./logs:/tmp/logs
+      - ./config/fluent.conf:/fluentd/etc/fluent.conf
